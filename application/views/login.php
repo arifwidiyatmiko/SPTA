@@ -1,86 +1,61 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-?><!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-	<title>Welcome to CodeIgniter</title>
 
-	<style type="text/css">
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sistem Tugas Akhir</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="<?php echo base_url();?>assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- styles -->
+    <link href="<?php echo base_url();?>assets/css/styles.css" rel="stylesheet">
 
-	::selection { background-color: #E13300; color: white; }
-	::-moz-selection { background-color: #E13300; color: white; }
-
-	body {
-		background-color: #fff;
-		margin: 40px;
-		font: 13px/20px normal Helvetica, Arial, sans-serif;
-		color: #4F5155;
-	}
-
-	a {
-		color: #003399;
-		background-color: transparent;
-		font-weight: normal;
-	}
-
-	h1 {
-		color: #444;
-		background-color: transparent;
-		border-bottom: 1px solid #D0D0D0;
-		font-size: 19px;
-		font-weight: normal;
-		margin: 0 0 14px 0;
-		padding: 14px 15px 10px 15px;
-	}
-
-	code {
-		font-family: Consolas, Monaco, Courier New, Courier, monospace;
-		font-size: 12px;
-		background-color: #f9f9f9;
-		border: 1px solid #D0D0D0;
-		color: #002166;
-		display: block;
-		margin: 14px 0 14px 0;
-		padding: 12px 10px 12px 10px;
-	}
-
-	#body {
-		margin: 0 15px 0 15px;
-	}
-
-	p.footer {
-		text-align: right;
-		font-size: 11px;
-		border-top: 1px solid #D0D0D0;
-		line-height: 32px;
-		padding: 0 10px 0 10px;
-		margin: 20px 0 0 0;
-	}
-
-	#container {
-		margin: 10px;
-		border: 1px solid #D0D0D0;
-		box-shadow: 0 0 8px #D0D0D0;
-	}
-	</style>
-</head>
-<body>
-
-<div id="container">
-	<h1>Welcome to CodeIgniter!</h1>
-
-	<div id="body">
-		<form action="<?php echo base_url();?>Auth/login/<?php echo $this->uri->segment(3);?>" method="POST">
-			<input type="text" name="username">
-			<input type="password" name="password">
-			<input type="submit">
-		</form>
-		<p>If you are exploring CodeIgniter for the very first time, you should start by reading the <a href="user_guide/">User Guide</a>.</p>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body class="login-bg">
+  	<div class="header">
+	     <div class="container">
+	        <div class="row">
+	           <div class="col-md-12">
+	              <!-- Logo -->
+	              <div class="logo">
+	                 <h1><a href="index.html">Sistem Tugas AKhir</a></h1>
+	              </div>
+	           </div>
+	        </div>
+	     </div>
 	</div>
 
-	<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds. <?php echo  (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>
-</div>
+	<div class="page-content container">
+		<div class="row">
+			<div class="col-md-4 col-md-offset-4">
+				<div class="login-wrapper">
+			        <div class="box">
+			            <div class="content-wrap">
+			                <h6>Sign In</h6>
+			                <input class="form-control" type="text" placeholder="E-mail address">
+			                <input class="form-control" type="password" placeholder="Password">
+			                <div class="action">
+			                    <a class="btn btn-primary signup" href="index.html">Login</a>
+			                </div>                
+			            </div>
+			        </div>
 
-</body>
+			    </div>
+			</div>
+		</div>
+	</div>
+
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="<?php echo base_url();?>assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="<?php echo base_url();?>assets/js/custom.js"></script>
+  </body>
 </html>
