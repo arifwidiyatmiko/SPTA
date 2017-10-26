@@ -3,25 +3,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Auth extends CI_Controller {
 
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see https://codeigniter.com/user_guide/general/urls.html
-	 */
 	function __construct()
 	{
 		parent::__construct();
 		$this->load->library('session');
+		$this->load->model('Admin_m','admin');
 		
 	}
 	public function index($val='')
@@ -30,11 +16,13 @@ class Auth extends CI_Controller {
 	}
 	public function login($val='')
 	{
-		if ($this->input->post('username') ==  $this->input->post('password')) {
-			// echo $this->uri->segment(3);die();
-			$this->session->set_userdata('url',$this->uri->segment(3));
-			redirect('Welcome/index/'.$this->uri->segment(3),'refresh');
+		$data = $this->admin->login($this->input->post('username'),$this->input->post('password'));
+		if ($data->num_rows() > 0) {
+			$this->session->set_userdata('admin',$data->result_array());
+			redirect('Admin','refresh');
 		}else{
+			$info = "<div class='alert alert-danger' role='alert'> Username & Password Mismatch</div>";
+			$this->session->set_flashdata('info',$info);
 			redirect('Auth','refresh');
 		}
 	}

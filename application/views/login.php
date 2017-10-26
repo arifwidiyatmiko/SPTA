@@ -33,15 +33,25 @@
 	<div class="page-content container">
 		<div class="row">
 			<div class="col-md-4 col-md-offset-4">
+				<?php if ($this->session->flashdata('info')) {
+					echo $this->session->flashdata('info');
+				} ?>
 				<div class="login-wrapper">
 			        <div class="box">
 			            <div class="content-wrap">
 			                <h6>Sign In</h6>
-			                <input class="form-control" type="text" placeholder="E-mail address">
-			                <input class="form-control" type="password" placeholder="Password">
-			                <div class="action">
-			                    <a class="btn btn-primary signup" href="index.html">Login</a>
-			                </div>                
+			                <form action="<?php echo base_url();?>Auth/login" method="POST">
+			                	<div class="form-group">
+			                		<input class="form-control" type="text" name="username" placeholder="Username" required="true">
+			                	</div>
+			                	<div class="form-group">
+				               		<input class="form-control" type="password" name="password" placeholder="Password"  required="true">
+				                </div>
+				                <div class="action">
+				                	<input type="submit" class="btn btn-primary" value="Login">
+				                    <!-- <a class="btn btn-primary signup" href="index.html">Login</a> -->
+				                </div> 
+			                </form>               
 			            </div>
 			        </div>
 
