@@ -7,7 +7,14 @@
     <link href="<?php echo base_url();?>assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- styles -->
     <link href="<?php echo base_url();?>assets/css/styles.css" rel="stylesheet">
-
+    <link href="<?php echo base_url();?>assets/vendors/datatables/css/jquery.dataTables.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>assets/vendors/datatables/css/jquery.dataTables_themeroller.css" rel="stylesheet">
+    <!-- script-->
+    <script src="<?php echo base_url();?>assets/js/jquery.js"></script>
+    <script src="<?php echo base_url();?>assets/vendors/datatables/js/jquery.dataTables.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="<?php echo base_url();?>assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="<?php echo base_url();?>assets/js/custom.js"></script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
