@@ -8,9 +8,6 @@ class Admin extends CI_Controller {
 		parent::__construct();
 		$this->load->library('session');
 		$this->load->model('Admin_m','admin');
-		if (!$this->session->userdata('admin')) {
-			redirect('Auth','refresh');
-		}
 		
 	}
 	public function index($value='')
